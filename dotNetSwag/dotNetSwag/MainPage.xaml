@@ -1,24 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="dotNetSwag.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:
+             x:Class="dotNetSwag.MainPage" Title="dotNetSwag Databinding">
 
-    <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-    </StackLayout>
+    <ListView x:Name="dotNetSwagListView" ItemsSource="{ Binding dotNetSwag}" ItemTapped="dotNetSwagListView_ItemTapped" SelectionMode="None" HasUnevenRows="True">
 
-</ContentPage>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="dotNetSwag>"
+                <ViewCell>
+                    
+                    <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="Auto" />
+                    <ColumnDefinition Width ="2*" />
+                    <ColumnDefinition Width ="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="name" Grid.Row="0" Grid.Column="0"></Label>
+            <Entry Grid.Row="0" Grid.Column="2"/>
+           <Label Text="Gender" Grid.Row="0" Grid.Column="0"/>
+            <Entry Grid.Row="0" Grid.Column="0"/>
+            <Label Text="T-shirt size" Grid.Row="0" Grid.Column="0"/>
+            <Entry Grid.Row="0" Grid.Column="1"/>
+           <Label Text="Date of order" Grid.Row="0" Grid.Column="0"/>
+            <Entry Grid.Row="0" Grid.Column="1"/>
+            <Label Text="T-shirt color" Grid.Row="0" Grid.Column="0"/>
+            <Entry Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Shipping address" Grid.Row="0" Grid.Column="0"/>
+            <Entry Grid.Row="0" Grid.Column="1"/>
+            
+            <Grid/>
+
+
+
+
+
+
+
+
+
+
+
+ 
