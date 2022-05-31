@@ -38,8 +38,17 @@
             <Entry Grid.Row="0" Grid.Column="1"/>
             <Label Text="Shipping address" Grid.Row="0" Grid.Column="0"/>
             <Entry Grid.Row="0" Grid.Column="1"/>
-            
-            <Grid/>
+
+             <Switch IsToggled="{Binding Done}" />
+              <Button Text="Save"
+                Clicked="OnSaveClicked" />
+                <Button Text="Delete"
+                Clicked="OnDeleteClicked" />
+                <Button Text="Cancel"
+                Clicked="OnCancelClicked" />
+
+
+                    <Grid/>
 
 
 
