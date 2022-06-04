@@ -13,6 +13,17 @@ namespace dotNetSwag
         public MainPage()
         {
             InitializeComponent();
+
+            static void dotNetSwagData();
+            var dotNetSwag= new dotNetSwag();
+            dotNetSwagData();
+      
+            dotNetSwag.DefautRequestHeaders.Add("Accept , Application/json");
+
+            dotNetSwag.GetstringAsync(dotNetSwag);
+             
+
+
         }
     }
 }
