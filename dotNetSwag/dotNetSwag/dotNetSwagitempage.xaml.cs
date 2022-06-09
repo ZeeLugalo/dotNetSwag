@@ -12,84 +12,58 @@ namespace dotNetSwag
 {
     public partial class dotSwagitempage : ContentPage
     {
-        public dotSwagitempage();
+        private List<SwagItem> _dotNetSwag;
 
-       
-        public class TodoItemDatabase
+        public List<SwagItem> DotNetSwag
         {
-            static SQLiteConnection Database;
-​
-            public static TodoItemDatabase Instance
-             {
-                get
-                {
-                    var instance = new TodoItemDatabase();
-                    CreateTableResult result = Database.CreateTable<TodoItem>();
-                    return instance;
-                }
-            }​
-​
-              public object Constants { get; private set; }
+            get { return _dotNetSwag; }
+            set { _dotNetSwag = value; }
+        }
 
-              public TodoItemDatabase()
-            {
-                Database = new SQLiteConnection(Constants.DatabasePath, Constants.Flags);
-            }
-​
-            public List<TodoItem> GetItems()
-            {
-                return Database.Table<TodoItem>().ToList();
-            }
-​
-             public List<TodoItem> GetItemsNotDone()
-            {
-                return Database.Query<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
-            }
-​
-        public TodoItem GetItem(int id)
-            {
-                return Database.Table<TodoItem>().Where(i => i.ID == id).FirstOrDefault();
-            }
-​
-        public int SaveItem(TodoItem item)
-            {
-                if (item.ID != 0)
-                {
-                    return Database.Update(item);
-                }
-                else
-                {
-                    return Database.Insert(item);
-                }
-            }
-​
-        public int DeleteItem(TodoItem item)
-            {
-                return Database.Delete(item);
 
-            }
+
+        public dotSwagitempage()
+        {
+            InitializeComponent();
+
+
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            var database = SwagDatabase.Instance;
+
+
+            BindingContext = new SwagItem();
+
+        }
+
+        private void  ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+        }
+
+        private void OnSaveClicked(object sender, EventArgs e)
+        {
+            var database = SwagDatabase.Instance;
+
+            SwagItem item = BindingContext as SwagItem;
+
+            database.SaveSwagItem(item);
+
+        }
+
+        private void OnDeleteClicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OnCancelClicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
-        public class SQLiteConnection
-    {
-        private object databasePath;
-        private object dotNetSwag;
-
-        public SQLiteConnection(object databasePath, object flags)
-        {
-            this.databasePath = databasePath;
-            this.dotNetSwag = dotNetSwag;
-        }
-
-        internal object Table<T>()
-        {
-            throw new NotImplementedException();
-        }
-
-        internal object DatabasePath 
-        {
-            
-            get { return databasePath; } }
-        
-        }

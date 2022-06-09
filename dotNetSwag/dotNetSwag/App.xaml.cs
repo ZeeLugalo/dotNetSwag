@@ -10,7 +10,11 @@ namespace dotNetSwag
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            var page = new NavigationPage(new dotSwagitempage());
+            page.BarTextColor = Color.White;
+            page.BarBackgroundColor = Color.Green;
+
+            MainPage = page;
         }
 
         protected override void OnStart()

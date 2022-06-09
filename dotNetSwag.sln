@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetSwag.Android", "dotNe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetSwag.iOS", "dotNetSwag\dotNetSwag.iOS\dotNetSwag.iOS.csproj", "{2F1201C7-E852-4BC5-BA70-44E9FAE14D72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNetSwag", "dotNetSwag\dotNetSwag\dotNetSwag.csproj", "{013D20E9-5560-42A9-BF4D-3A47FCD52669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotNetSwag", "dotNetSwag\dotNetSwag\dotNetSwag.csproj", "{013D20E9-5560-42A9-BF4D-3A47FCD52669}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DA5C7F6B-88DF-4C3B-AFC7-3221D71F02A2}"
 	ProjectSection(SolutionItems) = preProject
